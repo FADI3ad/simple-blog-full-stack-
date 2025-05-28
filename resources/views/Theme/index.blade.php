@@ -2,6 +2,7 @@
 
 @section('title','Home')
 
+@section('home_activation','active')
 
 
 @section('content')
