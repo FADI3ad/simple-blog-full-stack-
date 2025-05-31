@@ -14,22 +14,22 @@ class AuthenticatedSessionController extends Controller
 {
     /**
      * Display the login view.
-     */
+    */
     public function create(): View
     {
-        return view('auth.login');
+       return view('theme.login');
     }
 
     /**
      * Handle an incoming authentication request.
-     */
+    */
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return to_route('theme.index');
     }
 
     /**
